@@ -1,3 +1,4 @@
+package PSP01;
 public class Ejemplo2d {
 
     public static void main(String[] args) {

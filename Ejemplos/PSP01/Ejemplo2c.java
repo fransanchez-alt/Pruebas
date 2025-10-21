@@ -1,10 +1,14 @@
-import java.io.*;
+package PSP01;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
-public class Ejemplo2b {
+public class Ejemplo2c {
+
     public static void main(String[] args) {
         Runtime r = Runtime.getRuntime();
-       String comando = "CMD /C DIR";
-        //String[] comando = {"java", "-cp", "src", "Unsaludo", ">fichero.txt"};
+      String comando = "CMD /C DIRR";
+        //String[] comando = {"java", "Unsaludo", "Hola Mundo!!", ">fichero.txt"};
         Process p = null;
         try {
             p = r.exec(comando);
@@ -19,11 +23,23 @@ public class Ejemplo2b {
         }
         // COMPROBACION DE ERROR - 0 bien - 1 mal
         int exitVal;
+        /*try {
+            InputStream err = p.getErrorStream();
+            BufferedReader brErr = new BufferedReader(new InputStreamReader(err));
+            String line = null;
+            while ((line = brErr.readLine()) != null) {
+                System.out.println("ERROR > " + line);
+            }
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+}*/
+
         try {
             exitVal = p.waitFor();
             System.out.println("Valor de Salida: " + exitVal);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        
     }
-} // Ejemplo2b
+}

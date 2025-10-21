@@ -1,3 +1,4 @@
+package PSP01;
 public class Lanzador {
     public static void main(String[] args) {
         try {
