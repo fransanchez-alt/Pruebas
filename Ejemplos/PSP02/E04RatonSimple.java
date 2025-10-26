@@ -1,11 +1,11 @@
 package PSP02;
 
-public class RatonSimple implements Runnable {
+public class E04RatonSimple implements Runnable {
     private String nombre;
     private int tiempoAlimentacion;
     private int alimentoConsumido;
 
-    public RatonSimple (String nombre, int tiempoAlimentacion) {
+    public E04RatonSimple (String nombre, int tiempoAlimentacion) {
         super ();
         this.nombre = nombre ;
         this. tiempoAlimentacion = tiempoAlimentacion;
@@ -29,7 +29,7 @@ public class RatonSimple implements Runnable {
     }
 
     public static void main(String[] args) {
-        RatonSimple fievel = new RatonSimple ("Fievel", 4);
+        E04RatonSimple fievel = new E04RatonSimple ("Fievel", 4);
         /*new Thread (fievel) .start ();
         new Thread (fievel) . start ();
         new Thread (fievel) .start ();

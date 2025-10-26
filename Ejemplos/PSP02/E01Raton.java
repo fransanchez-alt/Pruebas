@@ -1,10 +1,10 @@
 package PSP02;
 
-public class Raton {
+public class E01Raton {
     private String nombre;
     private int tiempoAlimentacion;
 
-    public Raton(String nombre, int tiempoAlimentacion) {
+    public E01Raton(String nombre, int tiempoAlimentacion) {
         super () ;
         this.nombre = nombre;
         this. tiempoAlimentacion = tiempoAlimentacion;
@@ -21,10 +21,10 @@ public class Raton {
     }
 
     public static void main(String[] args) {
-        Raton fievel = new Raton ("Fievel", 4) ;
-        Raton jerry = new Raton ("Jerry", 5) ;
-        Raton pinky = new Raton ("Pinky", 3) ;
-        Raton mickey = new Raton ("Mickey", 6) ;
+        E01Raton fievel = new E01Raton ("Fievel", 4) ;
+        E01Raton jerry = new E01Raton ("Jerry", 5) ;
+        E01Raton pinky = new E01Raton ("Pinky", 3) ;
+        E01Raton mickey = new E01Raton ("Mickey", 6) ;
         fievel.comer();
         jerry.comer();
         pinky.comer();
