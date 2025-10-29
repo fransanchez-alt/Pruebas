@@ -3,7 +3,7 @@ package PSP02;
 import java.util.ArrayList;
 import java.util.List;
 
-public class E10LectorEscritorNoSeguro extends Thread {
+public class E11aLectorEscritorNoSeguro extends Thread {
     private static List<String> palabras = new ArrayList<String>() ;
 
     @Override 
@@ -17,7 +17,7 @@ public class E10LectorEscritorNoSeguro extends Thread {
 
     public static void main(String[] args) {
         for(int i=0;i<100;i++) {
-            new E10LectorEscritorNoSeguro () .start () ;
+            new E11aLectorEscritorNoSeguro () .start () ;
         }
     }
 }
