@@ -28,13 +28,19 @@ public class E16MultiHiloJoin extends Thread {
         fievel.start(); jerry.start(); pinky.start(); mickey.start();
         fievel.setPriority(Thread.MIN_PRIORITY);
         mickey.setPriority(Thread.MAX_PRIORITY);
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
         if (fievel.isAlive() || jerry.isAlive() || pinky.isAlive() || mickey.isAlive()) {
             System.out.println("Los ratones están comiendo");
         }
-        /*try {fievel.join(); jerry.join(); pinky.join(); mickey.join();          
+        try {fievel.join(); jerry.join(); pinky.join(); mickey.join();          
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }*/
+        }
         System.out.println("Los ratones han terminado de comer");        
     }
 }

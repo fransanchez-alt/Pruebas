@@ -9,8 +9,8 @@ public class E18bComparticionInstanciaUnica extends Thread {
 
     @Override 
     public void run() {
-        this.oc.variableComun++; 
-        //for (int i = 0; i < 1_000_000; i++) this.oc.variableComun++;
+        //this.oc.variableComun++; 
+        for (int i = 0; i < 1_000_000; i++) this.oc.variableComun++;
         System.out.println("Variable común:" + this.oc.variableComun) ;
     }
 
@@ -19,7 +19,7 @@ public class E18bComparticionInstanciaUnica extends Thread {
         E18bComparticionInstanciaUnica ciul = new E18bComparticionInstanciaUnica (oc); 
         E18bComparticionInstanciaUnica ciu2 = new E18bComparticionInstanciaUnica (oc); 
         ciul. start () ; 
-        Thread.sleep (100) ; 
+        //Thread.sleep (100) ; 
         ciu2. start ();
     } 
 }

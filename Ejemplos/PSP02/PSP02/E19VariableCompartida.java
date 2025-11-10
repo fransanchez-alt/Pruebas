@@ -13,10 +13,10 @@ public class E19VariableCompartida extends Thread {
 
     public static void main (String[] args) { 
         for (int i=0;i<1000;i++) {
-            new E19VariableCompartida() .start ();
+            new E19VariableCompartida().start();
         }
         try { 
-            Thread.sleep (1000);
+            Thread.sleep(1000);
         } catch (Exception e) { 
             e.printStackTrace();
         }
