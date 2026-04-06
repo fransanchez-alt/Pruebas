@@ -1,0 +1,22 @@
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
+
+public class LeerWeb {
+    public static void main(String[] args) {
+        try {
+            URL url = new URL("https://www.elmundo.es/");
+            URLConnection conexion = url.openConnection();
+            InputStream is = conexion.getInputStream();
+
+            int c;
+            while ((c = is.read()) != -1) {
+                System.out.print((char) c);
+            }
+
+            is.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
