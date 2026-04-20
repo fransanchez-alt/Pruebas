@@ -1,15 +1,16 @@
 
 import java.net.HttpURLConnection;
 import java.net.URI;
-import java.net.URLEncoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 
 public class GestorPeticionesHTTP1 {
     /*
+
+Corresponde a la ctividad resuelta 4.3 del manual de paraninfo
+
 En esta versión utilizamos la API moderna de Java (HttpClient, HttpRequest y HttpResponse),
 que simplifica mucho el trabajo con HTTP. En lugar de abrir conexiones manualmente y leer
 el flujo de datos carácter a carácter, aquí creamos un cliente, definimos una petición y
@@ -25,7 +26,7 @@ cercano al funcionamiento real del protocolo HTTP (cliente → petición → res
         // No codificamos la ruta completa, solo parámetros si los hubiera
         String direccion = esquema + servidor + recurso;
 
-        HttpClient httpClient = HttpClient
+        HttpClient cliente = HttpClient
                 .newBuilder()
                 .version(HttpClient.Version.HTTP_1_1)
                 .followRedirects(HttpClient.Redirect.NORMAL)
@@ -39,7 +40,7 @@ cercano al funcionamiento real del protocolo HTTP (cliente → petición → res
                 .build();
 
         HttpResponse<Path> response =
-                httpClient.send(request,
+                cliente.send(request,
                         HttpResponse.BodyHandlers.ofFile(Path.of(path)));
 
         return response.statusCode();

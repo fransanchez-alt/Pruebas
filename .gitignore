@@ -1,0 +1,28 @@
+# Sistema
+.DS_Store
+
+# Herramientas locales
+.codex
+.idea/
+.vscode/
+**/.vscode/
+
+# Archivos temporales
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Salidas compiladas comunes de Java
+*.class
+bin/
+target/
+**/target/
+
+# Datos y pruebas locales de este proyecto
+jugadores.neodatis
+prueba.txt
+prueba-descargado.txt
+Ejemplos/PSP04/FTP/prueba.txt
+Ejemplos/PSP04/FTP/prueba-descargado.txt
+Ejemplos/PSP04/FTP/GestorFTP.java

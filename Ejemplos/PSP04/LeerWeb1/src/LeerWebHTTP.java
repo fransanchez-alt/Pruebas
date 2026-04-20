@@ -9,8 +9,8 @@ public class LeerWebHTTP {
     try {
    //URL url = new URL("http://www.iesdonosocortes.es/");
     //URL url = new URL("http://httpbin.org/status/404");
-    //URL url = new URL("https://api.chucknorris.io/jokes/random");
-    //URL url = new URL("https://api.openligadb.de/getmatchdata/bl1/2024");
+    URL url = new URL("https://api.chucknorris.io/jokes/random");
+    
 
     conexion = (HttpURLConnection) url.openConnection();
 

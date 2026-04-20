@@ -11,6 +11,8 @@ import java.nio.file.Paths;
 
 public class GestorPeticionesHTTP {
     /*
+    Corresponde a la ctividad resuelta 4.1 del manual de paraninfo
+    
     Esta clase tiene dos métodos principales: uno para obtener el contenido de una URL y otro para guardarlo en un fichero. 
 
     En el primero, partimos de una dirección en forma de String y creamos un objeto URL a partir de ella. 
@@ -47,6 +49,13 @@ public class GestorPeticionesHTTP {
         return respuesta;
     }
 
+    /**
+     * Escribe el contenido en un archivo.
+     * Nota: Desde Java 11, se podría usar Files.writeString(path,
+     *  contenido) para evitar la conversión manual a bytes,
+     * pero aquí se hace explícitamente para enseñar el concepto
+     *  de codificación.
+     */
     public static void writeFile(String strPath, String contenido) throws IOException {
         Path path = Paths.get(strPath);
         byte[] strToBytes = contenido.getBytes();
