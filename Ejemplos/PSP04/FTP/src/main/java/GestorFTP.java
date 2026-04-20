@@ -14,13 +14,31 @@ import org.apache.commons.net.ftp.FTPReply;
 public class GestorFTP {
 
     private FTPClient clienteFTP;
-    private static final String SERVIDOR = "localhost";
-    private static final int PUERTO = 21;
-    private static final String USUARIO = "franFTP";
-    private static final String PASSWORD = "toritoBRAVO";
+    private static final String SERVIDOR = getConfig("FTP_SERVER", "localhost");
+    private static final int PUERTO = Integer.parseInt(getConfig("FTP_PORT", "21"));
+    private static final String USUARIO = getRequiredConfig("FTP_USER");
+    private static final String PASSWORD = getRequiredConfig("FTP_PASSWORD");
 
     public GestorFTP() {
         clienteFTP = new FTPClient();
+    }
+
+    private static String getConfig(String key, String defaultValue) {
+        String value = System.getenv(key);
+        if (value == null || value.isBlank()) {
+            return defaultValue;
+        }
+        return value;
+    }
+
+    private static String getRequiredConfig(String key) {
+        String value = System.getenv(key);
+        if (value == null || value.isBlank()) {
+            throw new IllegalStateException(
+                "Falta la variable de entorno " + key + ". Configurala antes de ejecutar el programa."
+            );
+        }
+        return value;
     }
 
     private void conectar() throws SocketException, IOException {
