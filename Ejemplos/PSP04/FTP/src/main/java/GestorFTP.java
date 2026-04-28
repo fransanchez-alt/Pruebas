@@ -15,7 +15,7 @@ public class GestorFTP {
 
     private FTPClient clienteFTP;
     private static final String SERVIDOR = "localhost";
-    private static final int PUERTO = 21;
+    private static final int PUERTO = 2121;
     private static final String USUARIO = "franFTP";
     private static final String PASSWORD = "pspFTP_2026";
 
